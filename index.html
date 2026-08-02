@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyan">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ashish Dwivedi - Full-Stack Developer & AI Applications Engineer Portfolio. Specializing in Java, Python, React, Spring Boot, and Microservices.">
+  <title>Ashish Dwivedi | Full-Stack & AI Developer</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Animated Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Custom Neon Cursor Spotlight -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- Sound Status Indicator / Floating Audio Toggle -->
+  <div class="audio-control-wrapper">
+    <button id="sound-toggle" class="neon-btn-sm sound-btn" aria-label="Toggle UI Sound Effects">
+      <i class="fa-solid fa-volume-xmark" id="sound-icon"></i>
+      <span class="sound-text">Sound: OFF</span>
+    </button>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-container" id="navbar">
+    <div class="nav-content max-width">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span><span class="logo-text">ASHISH</span><span class="logo-dot">.</span><span class="logo-sub">DEV</span><span class="logo-bracket"> /&gt;</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a>
+        <a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a>
+        <a href="#projects" class="nav-link"><i class="fa-solid fa-rocket"></i> Projects</a>
+        <a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a>
+        <a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </nav>
+
+      <!-- Right Controls: Theme Switcher & Mobile Menu Toggle -->
+      <div class="nav-actions">
+        <!-- Neon Palette Picker -->
+        <div class="theme-picker" id="theme-picker">
+          <button class="theme-dot cyan active" data-color="cyan" title="Neon Cyan Theme"></button>
+          <button class="theme-dot magenta" data-color="magenta" title="Cyber Magenta Theme"></button>
+          <button class="theme-dot purple" data-color="purple" title="Electric Violet Theme"></button>
+          <button class="theme-dot emerald" data-color="emerald" title="Acid Lime Theme"></button>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="hero-container max-width">
+        <div class="hero-text-content">
+          <div class="status-badge" data-reveal>
+            <span class="status-pulse"></span>
+            <span class="status-label">AVAILABLE FOR OPPORTUNITIES</span>
+          </div>
+
+          <h1 class="hero-title" data-reveal>
+            Hi, I'm <span class="neon-text glow-effect">Ashish Dwivedi</span>
+          </h1>
+
+          <div class="typing-container" data-reveal>
+            <span class="typing-prefix">&gt; </span>
+            <span id="typing-text" class="typing-content"></span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <p class="hero-description" data-reveal>
+            Full-Stack Software Developer & AI Solutions Enthusiast based in Delhi, India. 
+            I craft high-performance microservices, intelligent AI-driven applications, and sleek, responsive user interfaces.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-cta-group" data-reveal>
+            <a href="#projects" class="neon-btn primary-btn">
+              <span>Explore Projects</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="neon-btn secondary-btn">
+              <span>Get In Touch</span> <i class="fa-solid fa-paper-plane"></i>
+            </a>
+            <a href="ashish8951651@gmail.com" class="neon-btn outline-btn" id="email-quick-link" target="_blank" title="Email Ashish">
+              <i class="fa-solid fa-envelope"></i> <span>Direct Email</span>
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div class="hero-socials" data-reveal>
+            <span class="social-label">Connect:</span>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:ashish8951651@gmail.com" class="social-icon-link" title="Send Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="tel:+919118805968" class="social-icon-link" title="Call Ashish">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Graphic / Avatar Card -->
+        <div class="hero-visual" data-reveal>
+          <div class="avatar-card-wrapper" id="avatar-card">
+            <div class="card-glow-border"></div>
+            <div class="avatar-card-inner">
+              <div class="card-corner tl"></div>
+              <div class="card-corner tr"></div>
+              <div class="card-corner bl"></div>
+              <div class="card-corner br"></div>
+              
+              <div class="avatar-img-container">
+                <img src="assets/images/avatar.png" alt="Ashish Dwivedi Avatar" class="avatar-img">
+                <div class="img-overlay-glow"></div>
+              </div>
+              
+              <div class="avatar-info-tag">
+                <div class="info-row">
+                  <i class="fa-solid fa-location-dot neon-icon"></i>
+                  <span>Delhi, India</span>
+                </div>
+                <div class="info-row">
+                  <i class="fa-solid fa-terminal neon-icon"></i>
+                  <span>Java • Python • React</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY STATS COUNTER STRIP -->
+    <section class="stats-section">
+      <div class="stats-container max-width">
+        <div class="stat-card" data-reveal>
+          <div class="stat-icon"><i class="fa-solid fa-code-compare"></i></div>
+          <div class="stat-number-wrapper">
+            <span class="stat-number" data-target="150">0</span><span class="stat-plus">+</span>
+          </div>
+          <p class="stat-label">DSA Problems Solved</p>
+        </div>
+
+        <div class="stat-card" data-reveal>
+          <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+          <div class="stat-number-wrapper">
+            <span class="stat-hash">#</span><span class="stat-number" data-target="42">0</span>
+          </div>
+          <p class="stat-label">Rank SIH Hackathon (500+ Teams)</p>
+        </div>
+
+        <div class="stat-card" data-reveal>
+          <div class="stat-icon"><i class="fa-brands fa-github-alt"></i></div>
+          <div class="stat-number-wrapper">
+            <span class="stat-number" data-target="7">0</span><span class="stat-plus">+</span>
+          </div>
+          <p class="stat-label">Open-Source Repos Contributed</p>
+        </div>
+
+        <div class="stat-card" data-reveal>
+          <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <div class="stat-number-wrapper">
+            <span class="stat-number" data-target="6">0</span><span class="stat-plus">+</span>
+          </div>
+          <p class="stat-label">Full-Stack & Microservice Apps</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+      <div class="section-container max-width">
+        <div class="section-header" data-reveal>
+          <span class="section-subtitle">// GET TO KNOW ME</span>
+          <h2 class="section-title">About <span class="neon-text">Ashish</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-bio-card glass-panel" data-reveal>
+            <h3 class="bio-heading"><i class="fa-solid fa-terminal neon-icon"></i> Software Developer & Problem Solver</h3>
+            <p class="bio-text">
+              I am a detail-oriented software developer with robust foundations in <strong>Java</strong>, <strong>Python</strong>, <strong>React.js</strong>, and <strong>Data Structures & Algorithms</strong>. 
+              My journey spans building AI-integrated web applications, architecting microservices with Spring Cloud, and contributing to open-source initiatives like <em>GirlScript Summer of Code</em>.
+            </p>
+            <p class="bio-text">
+              Whether optimizing database queries with ORMs, implementing multi-threaded asynchronous notification pipelines, or designing REST APIs, I thrive on writing clean, scalable, and maintainable code that solves real-world challenges.
+            </p>
+
+            <div class="highlights-grid">
+              <div class="highlight-item">
+                <i class="fa-solid fa-brain highlight-icon"></i>
+                <div>
+                  <h4>Algorithmic Mindset</h4>
+                  <p>Strong focus on OOP, DSA, System Architecture & Database Normalization.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-microchip highlight-icon"></i>
+                <div>
+                  <h4>AI & LLM Integration</h4>
+                  <p>Building real-time AI tools with FastAPI, Gemini API, and custom NLP parsers.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-network-wired highlight-icon"></i>
+                <div>
+                  <h4>Distributed Systems</h4>
+                  <p>Microservices with Spring Cloud, Resilience4j circuit breakers & WebSocket streams.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-people-group highlight-icon"></i>
+                <div>
+                  <h4>Collaborative Developer</h4>
+                  <p>Active open-source contributor, Agile team member, and hackathon competitor.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS MATRIX SECTION -->
+    <section class="skills-section" id="skills">
+      <div class="section-container max-width">
+        <div class="section-header" data-reveal>
+          <span class="section-subtitle">// TECHNICAL TECH STACK</span>
+          <h2 class="section-title">Skills & <span class="neon-text">Proficiency</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="skills-wrapper">
+          <!-- Languages Category -->
+          <div class="skill-category-card glass-panel" data-reveal>
+            <div class="category-header">
+              <i class="fa-solid fa-code category-icon"></i>
+              <h3>Programming Languages</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span>Java (OOP, Concurrency, JDBC)</span>
+                  <span class="skill-perc">90%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span>Python (FastAPI, AI/ML, PyPDF)</span>
+                  <span class="skill-perc">85%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span>JavaScript & TypeScript</span>
+                  <span class="skill-perc">85%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span>C Language</span>
+                  <span class="skill-perc">75%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="width: 75%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Web & Frameworks Category -->
+          <div class="skill-category-card glass-panel" data-reveal>
+            <div class="category-header">
+              <i class="fa-solid fa-cubes category-icon"></i>
+              <h3>Web & Frameworks</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span>Spring Boot & Spring Cloud</span>
+                  <span class="skill-perc">88%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="width: 88%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span>React.js & Tailwind CSS</span>
+                  <span class="skill-perc">85%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span>FastAPI & REST APIs</span>
+                  <span class="skill-perc">85%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span>HTML5, CSS3, DOM Manipulation</span>
+                  <span class="skill-perc">92%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="width: 92%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Databases & Tools Category -->
+          <div class="skill-category-card glass-panel" data-reveal>
+            <div class="category-header">
+              <i class="fa-solid fa-database category-icon"></i>
+              <h3>Databases & Infrastructure</h3>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span>MySQL & Relational Schema Design</span>
+                  <span class="skill-perc">88%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="width: 88%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span>SQLAlchemy ORM & JDBC</span>
+                  <span class="skill-perc">85%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span>Git, GitHub & Version Control</span>
+                  <span class="skill-perc">90%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-info">
+                  <span>Apache Tomcat 10.1 & Servlets</span>
+                  <span class="skill-perc">80%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="width: 80%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Core CS Concepts -->
+          <div class="skill-category-card glass-panel" data-reveal>
+            <div class="category-header">
+              <i class="fa-solid fa-diagram-project category-icon"></i>
+              <h3>Core Fundamentals</h3>
+            </div>
+            <div class="skill-tags-cloud">
+              <span class="tech-tag neon-tag"><i class="fa-solid fa-check"></i> Data Structures & Algorithms</span>
+              <span class="tech-tag neon-tag"><i class="fa-solid fa-check"></i> Object-Oriented Programming (OOP)</span>
+              <span class="tech-tag neon-tag"><i class="fa-solid fa-check"></i> Microservices Architecture</span>
+              <span class="tech-tag neon-tag"><i class="fa-solid fa-check"></i> WebSocket Real-Time Protocols</span>
+              <span class="tech-tag neon-tag"><i class="fa-solid fa-check"></i> Circuit Breakers (Resilience4j)</span>
+              <span class="tech-tag neon-tag"><i class="fa-solid fa-check"></i> Multithreading & Async Processing</span>
+              <span class="tech-tag neon-tag"><i class="fa-solid fa-check"></i> Operating Systems & DBMS</span>
+              <span class="tech-tag neon-tag"><i class="fa-solid fa-check"></i> Agile & GitHub Workflows</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section class="projects-section" id="projects">
+      <div class="section-container max-width">
+        <div class="section-header" data-reveal>
+          <span class="section-subtitle">// PORTFOLIO SHOWCASE</span>
+          <h2 class="section-title">Featured <span class="neon-text">Projects</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="project-filters" data-reveal>
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="ai">AI & LLM</button>
+          <button class="filter-btn" data-filter="java">Java & Microservices</button>
+          <button class="filter-btn" data-filter="web">Full-Stack Web</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          
+          <!-- PROJECT 1: AI INTERVIEW COPILOT -->
+          <article class="project-card glass-panel" data-category="ai" data-reveal>
+            <div class="project-img-wrapper">
+              <img src="assets/images/project-ai.png" alt="AI Interview Copilot Preview" class="project-img">
+              <div class="project-img-badge">AI / Full-Stack</div>
+            </div>
+            
+            <div class="project-content">
+              <h3 class="project-title">AI Interview Copilot</h3>
+              <p class="project-summary">
+                Full-stack AI application delivering automated mock technical & behavioral interviews with instant LLM-powered feedback and ATS compatibility scoring.
+              </p>
+              
+              <div class="project-tech-stack">
+                <span class="badge">React</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">FastAPI</span>
+                <span class="badge">Python</span>
+                <span class="badge">Gemini API</span>
+                <span class="badge">SQLAlchemy</span>
+              </div>
+
+              <div class="project-links">
+                <button class="neon-btn-sm modal-trigger" data-modal="modal-ai">
+                  <i class="fa-solid fa-circle-info"></i> Learn More
+                </button>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="neon-btn-sm outline" title="View Source Code on GitHub">
+                  <i class="fa-brands fa-github"></i> GitHub Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: MICROSERVICES FINANCE -->
+          <article class="project-card glass-panel" data-category="java" data-reveal>
+            <div class="project-img-wrapper">
+              <img src="assets/images/project-microservices.png" alt="Microservices Financial Processing Preview" class="project-img">
+              <div class="project-img-badge">Java / Microservices</div>
+            </div>
+            
+            <div class="project-content">
+              <h3 class="project-title">Real-Time Financial Transaction Processing</h3>
+              <p class="project-summary">
+                Architected a 6-service microservice ecosystem with Spring Boot 3, WebSocket live alerts, OpenFeign inter-service REST, and Resilience4j circuit breakers.
+              </p>
+              
+              <div class="project-tech-stack">
+                <span class="badge">Java</span>
+                <span class="badge">Spring Boot 3</span>
+                <span class="badge">Spring Cloud</span>
+                <span class="badge">WebSocket</span>
+                <span class="badge">MySQL</span>
+                <span class="badge">Resilience4j</span>
+              </div>
+
+              <div class="project-links">
+                <button class="neon-btn-sm modal-trigger" data-modal="modal-finance">
+                  <i class="fa-solid fa-circle-info"></i> Learn More
+                </button>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="neon-btn-sm outline" title="View Source Code on GitHub">
+                  <i class="fa-brands fa-github"></i> GitHub Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: FUSION FEAST -->
+          <article class="project-card glass-panel" data-category="web" data-reveal>
+            <div class="project-img-wrapper">
+              <img src="assets/images/project-fusion.png" alt="Fusion Feast Web Application Preview" class="project-img">
+              <div class="project-img-badge">Full-Stack Web</div>
+            </div>
+            
+            <div class="project-content">
+              <h3 class="project-title">Fusion Feast - Full-Stack Restaurant Web App</h3>
+              <p class="project-summary">
+                End-to-end restaurant management solution with 4 RESTful Java Servlets, MVC architecture, JDBC PreparedStatements, and asynchronous multi-threaded notification dispatch.
+              </p>
+              
+              <div class="project-tech-stack">
+                <span class="badge">Java Servlets</span>
+                <span class="badge">JSP</span>
+                <span class="badge">JDBC</span>
+                <span class="badge">MySQL</span>
+                <span class="badge">Apache Tomcat 10.1</span>
+              </div>
+
+              <div class="project-links">
+                <button class="neon-btn-sm modal-trigger" data-modal="modal-fusion">
+                  <i class="fa-solid fa-circle-info"></i> Learn More
+                </button>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="neon-btn-sm outline" title="View Source Code on GitHub">
+                  <i class="fa-brands fa-github"></i> GitHub Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & ACHIEVEMENTS SECTION -->
+    <section class="experience-section" id="experience">
+      <div class="section-container max-width">
+        <div class="section-header" data-reveal>
+          <span class="section-subtitle">// CAREER MILESTONES</span>
+          <h2 class="section-title">Experience & <span class="neon-text">Achievements</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="timeline-container">
+          
+          <!-- Item 1: GirlScript -->
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-dot"><i class="fa-solid fa-code-branch"></i></div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Open-Source Contributor (Intern)</h3>
+                  <h4 class="company-name">GirlScript Summer of Code</h4>
+                </div>
+                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> Jul 2025 - Sep 2025</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Contributed to <strong>7+ open-source repositories</strong> by implementing key features and code refactoring.</li>
+                <li>Developed a <em>Coding Contest Companion Bot</em> integrating CodeChef, CodeForces, and TechGig APIs.</li>
+                <li>Resolved 15+ complex issues, enhanced documentation, and reduced contributor onboarding time by <strong>25%</strong>.</li>
+                <li>Collaborated with over 100+ global contributors using GitHub issues, pull requests, and Agile workflows.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 2: Prodigy InfoTech -->
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-dot"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Web Development Intern</h3>
+                  <h4 class="company-name">Prodigy InfoTech</h4>
+                </div>
+                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> Jul 2024 - Aug 2024</span>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Designed and developed 6 fully responsive web modules using HTML5, CSS3, and JavaScript.</li>
+                <li>Implemented modern UI/UX enhancements and validated cross-browser cross-platform compatibility.</li>
+                <li>Worked in a fast-paced development team to deliver software modules ahead of schedule.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 3: Smart India Hackathon & Problem Solving -->
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-dot"><i class="fa-solid fa-trophy"></i></div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Smart India Hackathon (SIH) Finalist</h3>
+                  <h4 class="company-name">National Level Competition</h4>
+                </div>
+                <span class="timeline-date"><i class="fa-solid fa-award"></i> Secured 42nd Rank</span>
+              </div>
+              <p class="timeline-text">
+                Secured <strong>42nd place nationwide out of 500+ participating teams</strong> in the Smart India Hackathon. 
+                Demonstrated strong problem solving, rapid prototyping, and software engineering capabilities under strict constraints.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4: Certifications -->
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-dot"><i class="fa-solid fa-certificate"></i></div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Professional Certifications</h3>
+                  <h4 class="company-name">GUVI Certification Authority</h4>
+                </div>
+                <span class="timeline-date"><i class="fa-solid fa-check-double"></i> Verified</span>
+              </div>
+              <div class="cert-chips">
+                <span class="cert-chip"><i class="fa-brands fa-java"></i> Java Programming</span>
+                <span class="cert-chip"><i class="fa-solid fa-database"></i> DBMS & Database Systems</span>
+                <span class="cert-chip"><i class="fa-brands fa-python"></i> Python Programming</span>
+                <span class="cert-chip"><i class="fa-solid fa-table"></i> SQL & Query Optimization</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+      <div class="section-container max-width">
+        <div class="section-header" data-reveal>
+          <span class="section-subtitle">// GET IN TOUCH</span>
+          <h2 class="section-title">Contact <span class="neon-text">Me</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info Column -->
+          <div class="contact-info-col glass-panel" data-reveal>
+            <h3 class="contact-info-title">Let's build something extraordinary together!</h3>
+            <p class="contact-info-desc">
+              Whether you have a question, a project opportunity, or want to discuss full-stack & AI development, feel free to drop a message.
+            </p>
+
+            <div class="info-card-list">
+              <div class="contact-detail-card">
+                <div class="detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <span class="detail-label">Email Me</span>
+                  <a href="mailto:ashish8951651@gmail.com" class="detail-value">ashish8951651@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-detail-card">
+                <div class="detail-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <span class="detail-label">Phone</span>
+                  <a href="tel:+919118805968" class="detail-value">+91 91188 05968</a>
+                </div>
+              </div>
+
+              <div class="contact-detail-card">
+                <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <span class="detail-label">Location</span>
+                  <span class="detail-value">Delhi, India</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links Group -->
+            <div class="contact-social-bar">
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="neon-social-btn" title="GitHub">
+                <i class="fa-brands fa-github"></i> <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="neon-social-btn" title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i> <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Interactive Form Column -->
+          <div class="contact-form-col glass-panel" data-reveal>
+            <form id="contact-form" class="neon-form" novalidate>
+              <div class="form-group">
+                <label for="form-name">Your Name <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-user input-icon"></i>
+                  <input type="text" id="form-name" placeholder="John Doe" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email">Your Email <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-envelope input-icon"></i>
+                  <input type="email" id="form-email" placeholder="john@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject">Subject</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-heading input-icon"></i>
+                  <input type="text" id="form-subject" placeholder="Project Opportunity / Inquiry">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message">Message <span class="required">*</span></label>
+                <div class="input-wrapper textarea-wrapper">
+                  <i class="fa-solid fa-comment-dots input-icon"></i>
+                  <textarea id="form-message" rows="5" placeholder="Hello Ashish, I would like to discuss..." required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="neon-btn primary-btn submit-btn" id="submit-btn">
+                <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+              </button>
+
+              <div id="form-toast" class="form-toast hidden"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-container">
+    <div class="footer-content max-width">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo">
+          <span class="logo-bracket">&lt;</span><span class="logo-text">ASHISH</span><span class="logo-dot">.</span><span class="logo-sub">DEV</span><span class="logo-bracket"> /&gt;</span>
+        </a>
+        <p>© 2026 Ashish Dwivedi. Engineered with Passion & Neon Energy.</p>
+      </div>
+
+      <div class="footer-actions">
+        <div class="sys-status">
+          <span class="status-dot"></span> System Status: Operational
+        </div>
+        <a href="#home" class="back-to-top" id="back-to-top" title="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT MODAL POPUPS -->
+
+  <!-- Modal 1: AI Interview Copilot -->
+  <div class="modal-backdrop hidden" id="modal-ai">
+    <div class="modal-container glass-panel">
+      <button class="modal-close" data-close><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body">
+        <img src="assets/images/project-ai.png" alt="AI Interview Copilot Overview" class="modal-img">
+        <h3 class="modal-title">AI Interview Copilot - Full-Stack AI Application</h3>
+        <p class="modal-text">
+          Architected a real-time AI-powered interview preparation app with FastAPI and React (TypeScript, Tailwind CSS), delivering automated mock technical/behavioral interviews and instant AI-generated response feedback.
+        </p>
+        
+        <h4 class="modal-subtitle">Key Features & Technical Architecture:</h4>
+        <ul class="modal-list">
+          <li>Integrated LLM orchestration (Google Gemini API / OpenAI) with custom PDF parsing pipelines (PyPDF) to analyze user resumes and calculate ATS compatibility scores.</li>
+          <li>Generates dynamic skill improvement roadmaps tailored to specified job descriptions.</li>
+          <li>Designed a high-performance relational database schema using SQLAlchemy ORM to manage normalized data for users, multi-turn interview conversations, resume analyses, and feedback history.</li>
+          <li>Secured with JSON Web Token (JWT) user authentication.</li>
+        </ul>
+
+        <div class="modal-actions">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="neon-btn primary-btn">
+            <i class="fa-brands fa-github"></i> View GitHub Repository
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Microservices Finance -->
+  <div class="modal-backdrop hidden" id="modal-finance">
+    <div class="modal-container glass-panel">
+      <button class="modal-close" data-close><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body">
+        <img src="assets/images/project-microservices.png" alt="Microservices Architecture Overview" class="modal-img">
+        <h3 class="modal-title">Microservices-Based Real-Time Financial Transaction System</h3>
+        <p class="modal-text">
+          Architected and built a 6-service microservices system (auth, account, transaction, notification, API gateway, service discovery) using Spring Boot 3 and Spring Cloud, with each service owning an independent MySQL database.
+        </p>
+
+        <h4 class="modal-subtitle">Key Features & Technical Architecture:</h4>
+        <ul class="modal-list">
+          <li>Built real-time transaction notifications using WebSocket, pushing live updates to connected clients instead of relying on polling.</li>
+          <li>Used OpenFeign for inter-service REST communication and Resilience4j circuit breakers to handle downstream service failures gracefully.</li>
+          <li>Decoupled architecture ensuring high fault tolerance, zero single point of failure, and independent horizontal scaling.</li>
+        </ul>
+
+        <div class="modal-actions">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="neon-btn primary-btn">
+            <i class="fa-brands fa-github"></i> View GitHub Repository
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Fusion Feast -->
+  <div class="modal-backdrop hidden" id="modal-fusion">
+    <div class="modal-container glass-panel">
+      <button class="modal-close" data-close><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body">
+        <img src="assets/images/project-fusion.png" alt="Fusion Feast App Overview" class="modal-img">
+        <h3 class="modal-title">Fusion Feast - Full-Stack Restaurant Web Application</h3>
+        <p class="modal-text">
+          Developed a complete full-stack restaurant web application using Java Servlets, JSP, JDBC, and MySQL, deployed on Apache Tomcat 10.1.
+        </p>
+
+        <h4 class="modal-subtitle">Key Features & Technical Architecture:</h4>
+        <ul class="modal-list">
+          <li>Built 4 RESTful Java Servlets (Menu, Reservation, Admin, Contact) handling HTTP GET/POST requests and returning JSON responses to the frontend.</li>
+          <li>Implemented MVC architecture with DAO pattern using JDBC PreparedStatements to prevent SQL injection vulnerabilities.</li>
+          <li>Applied multithreading in Java to send email and SMS notifications asynchronously without blocking the HTTP response thread.</li>
+        </ul>
+
+        <div class="modal-actions">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="neon-btn primary-btn">
+            <i class="fa-brands fa-github"></i> View GitHub Repository
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Main Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
